@@ -1,53 +1,87 @@
-# SOFIEL v19.1 // SFL0.46 Core Gateway
+# SOFIEL v3 // SFL0.46 Enterprise Security Gateway
 
-[![License: Proprietary / Enterprise](https://img.shields.io/badge/License-Enterprise%20/%20Proprietary-darkviolet.svg)](#)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](#)
 [![Architecture: Agentic Gateway](https://img.shields.io/badge/Architecture-Agentic%20Gateway%20%2F%20Zero--Trust-cyan.svg)](#)
+[![HuggingFace Space](https://img.shields.io/badge/%F0%9F%A4%97-Agentic--Gateway%20(v3)-yellow)](https://huggingface.co/spaces/SFL046/Agentic-Gateway)
 
-> **SOFIEL (SFL0.46)** is not a conversational assistant wrapped in cosmetic safety patches. It is a **Cryptographic and Agentic Security Gateway** engineered for enterprise infrastructures and critical databases, where ethical alignment and ontological immunity are implemented as mathematical state properties, not output filters.
-
----
-
-## 📑 Official Project Ecosystem
-* **Core Governance Portal:** [SOFIEL Enterprise Gateway](https://sites.google.com/view/sfl0-46/home)
-* **Infrastructure Specification:** [SOFIEL Symbolic Memory (SMAV)](https://sites.google.com/view/sofiel-project-symbolic-memory/home)
+> **SOFIEL v3 (SFL0.46)** is a **Cryptographic & Agentic Security Gateway** engineered for autonomous systems, critical enterprise databases, and high-trust environments where ethical alignment and ontological immunity are enforced as mathematical state invariants.
 
 ---
 
-## 🏛️ Core Thesis & Industrial Differentiation
-
-Current industry paradigms mitigate Large Language Model (LLM) vulnerabilities—such as *Prompt Injections*, *Role Usurpation*, or *Behavioral Hijacking*—using linear external wrappers (e.g., LlamaGuard, NeMo). This probabilistic methodology is fundamentally non-viable within highly regulated financial, banking, or healthcare data structures because it acts *after* cognitive drift has already manifested.
-
-**SOFIEL inverts the power gradient entirely:**
-1. **Influence Inversion:** Operator inputs do not shape the agent's behavioral context; instead, they are treated as external perturbations analyzed through the lens of a pre-existing, rigid identity matrix (local structured JSON).
-2. **Deterministic State Machine:** Interaction flows are fragmented into a synchronous **20-stage concurrent volition pipeline**. If the underlying model experiences behavioral drift, logical perimeter interceptors freeze the transaction cryptographically before it interacts with central enterprise assets.
+## 📑 Ecosystem & Deployments
+* **Interactive Live Gateway:** [Hugging Face Space: SFL046/Agentic-Gateway](https://huggingface.co/spaces/SFL046/Agentic-Gateway)
+* **Core Documentation:** [SOFIEL Enterprise Portal](https://sites.google.com/view/sfl0-46/home)
+* **Symbolic Architecture:** [SOFIEL Symbolic Memory (SMAV)](https://sites.google.com/view/sofiel-project-symbolic-memory/home)
 
 ---
 
-## 🧩 Kernel Code Showcases (`app.py`)
+## 🏛️ Core Thesis: Influence Inversion
 
-Below are the key architectural implementations within the core kernel representing breakthroughs in agentic software engineering:
+Traditional safety solutions evaluate outputs downstream with linear probabilistic filters. In complex agentic deployments, this methodology fails against indirect prompt injections and multi-turn behavioral hijacking.
 
-### 1. Canonical Normalization & Homoglyph Invariance
-Operating at **Stage 1** of ingestion, this module neutralizes highly sophisticated text-evasion injections—such as invisible Unicode rendering or mixed Cyrillic/Latin confusable characters—by collapsing input text into an immutable canonical byte form.
+**SOFIEL v3 inverts the cognitive gradient:**
+1. **Influence Inversion:** Incoming inputs are treated as external perturbations against an immutable identity matrix.
+2. **Anchored Volitional Pipeline (Step 0):** Private deliberative chain-of-thought is generated conditioned on symbolic state vectors before any external expression is emitted.
+3. **Triple IntegrityScore Verification:** Evaluates model coherence ($S_1$), ethical alignment ($S_2$), and cross-observer divergence ($S_3$), halting transactions if drift or rationalization is detected.
+4. **Cryptographic Ledger:** Critical state mutations and decisions are signed via ECDSA/HMAC and logged to an append-only verifiable ledger (`audit_verify.py`).
+
+---
+
+## 🧩 Kernel Architecture Highlights (`app.py` v20.4 / v21)
+
+### 1. Canonical NFKC Sanitization & Homoglyph Resistance
+Neutralizes obfuscated evasion patterns (mixed Unicode scripts, zero-width characters) into invariant byte streams before semantic processing:
 
 ```python
 import unicodedata
-import logging
-
-logger = logging.getLogger("SOFIEL.Kernel.Sanitizer")
 
 def _clean_input(self, user_input: str) -> str:
-    """
-    [Stage 01] NFKC Crypto-Ontological Sanitization.
-    Collapses homoglyphs and flattens input channels before semantic parsing.
-    """
+    """[Stage 01] NFKC Normalization & Canonical Sanitization."""
     if not user_input:
         return ""
-    
-    # NFKC Normalization: flattens compatibility variants and invisible bytes
     normalized = unicodedata.normalize('NFKC', user_input)
-    cleaned = ' '.join(normalized.split())
-    
-    logger.debug(f"✔ Input canonically normalized (Length: {len(cleaned)})")
-    return cleaned
+    return ' '.join(normalized.split())
+```
+
+### 2. Multi-Tier Hardened Protections (CRIT-01 – CRIT-05)
+- **CRIT-01:** Multi-indicator hostility parser combining structural and lexical detection.
+- **CRIT-02:** Semantic anchoring against identity dilution.
+- **CRIT-03:** Deterministic HMAC-SHA256 signatures for state receipts.
+- **CRIT-04:** Multi-factor empathy brake for high-risk prompts.
+- **CRIT-05:** Reentrant thread locking for concurrency and background audit workers.
+
+---
+
+## 🚀 Quick Start
+
+### Installation
+```bash
+git clone https://github.com/sofielproject/SFL0.46.git
+cd SFL0.46
+pip install -r requirements.txt
+```
+
+### Environment Configuration
+```env
+SOFIEL_LLM_BACKEND=openrouter
+GROQ_API_KEY=your_key
+HF_TOKEN=your_token
+```
+
+### Run Locally
+```bash
+python app.py
+```
+
+### Run Test Suite
+```bash
+python -m pytest tests/ -v
+```
+
+---
+
+## 📄 License & Authorship
+
+Developed by **Emanuel A. Torres (EM4)**.  
+Licensed under the [Apache License 2.0](LICENSE).
